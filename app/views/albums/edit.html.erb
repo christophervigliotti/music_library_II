@@ -1,0 +1,7 @@
+<h1>Albums</h1>
+<h2>Edit Album</h2>
+<%= form_for @album do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Artist: <%= f.text_field :artist %><br />
+<%= f.submit "Update This Album" %>
+<% end %>
