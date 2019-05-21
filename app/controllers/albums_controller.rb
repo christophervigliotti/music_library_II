@@ -2,9 +2,6 @@ class AlbumsController < ApplicationController
   def index
     @albums = Album.all
   end
-  def new
-    @album = Album.new
-  end
   def create
     if Album.create(album_params)
       redirect_to root_path
@@ -13,7 +10,18 @@ class AlbumsController < ApplicationController
     end
   end
   def edit
-    @album = Album.find_by_id(:id)
+    @album = Album.find(params[:id])
+  end
+  def new
+    @album = Album.new
+  end
+  def update
+    @album = Album.find(params[:id])
+    if @album.update(album_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

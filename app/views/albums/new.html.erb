@@ -1,6 +1,10 @@
 <h1>Albums</h1><h2>New Album</h2>
 <%= form_for @album do |f| %>
+  <!-- form fields -->
   Title: <%= f.text_field :title %><br />
   Artist: <%= f.text_field :artist %><br />
-<%= f.submit "Add This Album" %>
+  <!-- buttons -->
+  <%= f.submit "Save New Album" %>
+  or
+  <%= link_to "Cancel", root_path, data: { confirm: 'Click OK to cancel adding this album and return to the Albums page.' } %>
 <% end %>

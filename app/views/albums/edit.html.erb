@@ -1,7 +1,13 @@
 <h1>Albums</h1>
 <h2>Edit Album</h2>
 <%= form_for @album do |f| %>
+  <!-- form fields -->
   Title: <%= f.text_field :title %><br />
   Artist: <%= f.text_field :artist %><br />
-<%= f.submit "Update This Album" %>
+
+  <!-- buttons -->
+  <%= f.submit "Save Edits To This Album" %>
+  <%= link_to 'Delete This Album' %>
+  or
+  <%= link_to "Cancel", root_path, data: { confirm: 'Click OK to cancel editing this album and return to the Albums page.' } %>
 <% end %>
